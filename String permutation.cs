@@ -9,17 +9,14 @@ namespace Programing_Qestions
         {
             Console.WriteLine("Enter the string");
             string str1=Console.ReadLine();
-            string str2 = Console.ReadLine();
-            if (CheckPermutaion(str1,str2)) Console.WriteLine("True");
-            else Console.WriteLine("False");
+             Console.WriteLine("String:"+ URLify(str1));
         }
 
-        static Boolean CheckPermutaion(string str1, string str2)
-        {   
-            string s1 = new string(str1.OrderBy(c=>c).ToArray());
-            string s2 = new string(str2.OrderBy(c => c).ToArray());
-            if (s1.Equals(s2, StringComparison.OrdinalIgnoreCase)) return true;
-            return false;
+       static string  URLify(string str1)
+        {
+           string s1= str1.Trim();
+            s1=s1.Replace(" ", "20%");
+            return s1;
         }
     }
 }
